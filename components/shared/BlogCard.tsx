@@ -5,9 +5,7 @@ import Overlay from "../ui/Overlay";
 import Link from "next/link";
 import { PostTypes } from "@/types/postTypes";
 
-const BlogCard: React.FC<{ post: PostTypes }> = ({
-  post,
-}) => {
+const BlogCard: React.FC<{ post: PostTypes }> = ({ post }) => {
   return (
     <article className="relative rounded-lg overflow-hidden">
       <div className="w-[1000px] h-[450px] relative">

@@ -8,13 +8,7 @@ interface buttonProps {
   type?: "button" | "submit" | "reset";
 }
 
-const Button = ({
-  text,
-  onClick,
-  aria,
-  action,
-  type,
-}: buttonProps) => {
+const Button = ({ text, onClick, aria, action, type }: buttonProps) => {
   return (
     <button
       className={clsx(

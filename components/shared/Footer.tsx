@@ -10,18 +10,15 @@ import useMenuActive from "@/hooks/useMenuActive";
 import { navLinks } from "@/constants";
 import Route from "../ui/Route";
 import Link from "next/link";
-
+import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="w-full py-5 bg-tertiary mt-10">
+    <footer className="w-full h-full py-5 bg-tertiary ">
       <div className="w-[95%] mx-auto max-w-[1450px]">
         <div className="py-5 border-b border-gray-300 border-opacity-20 flex justify-between items-center max-md:flex-col max-md:gap-8">
           <div className="flex-1">
             <Link href={"/"}>
-              <h1 className="text-3xl font-extrabold text-light">
-                Explore
-                <span className="text-primary">X</span>
-              </h1>
+              <Image src="/white-logo.svg" width={200} height={50} alt="logo" />
             </Link>
           </div>
 
@@ -49,10 +46,10 @@ const Footer = () => {
         </div>
 
         <div className="w-full text-center mt-3 text-sm text-white">
-          <span>All Rights Reserved ExploreX.com</span>
+          <span>All Rights Reserved RubyDash.com</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

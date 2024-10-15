@@ -9,15 +9,14 @@ import { PostTypes } from "@/types/postTypes";
 import { formatDate } from "@/utils/formatDate";
 
 const getData = async (id: string) => {
-  const res = await fetch(
-    `http://localhost:3000/api/post/${id}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`http://localhost:3000/api/post/${id}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
-    throw new Error("Failed");
+    const errorData = await res.json();
+    console.error("API Error:", errorData);
+    throw new Error(`Failed: ${res.status} ${errorData.message}`);
   }
 
   return res.json();
@@ -27,7 +26,7 @@ const page = async ({ params }: { params: PostTypes }) => {
   const { id } = params;
   const post = await getData(id);
   return (
-    <div className="w-[95%] mx-auto max-w-[1450px]">
+    <div className="w-[95%] mx-auto max-w-[1450px] mb-10">
       <div className="w-full h-[400px] relative mb-5">
         <Image
           fill

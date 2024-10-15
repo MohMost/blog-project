@@ -6,7 +6,7 @@ import {
   FaSquareSnapchat,
 } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
-
+import Image from "next/image";
 import Button from "../ui/Button";
 import { navLinks } from "@/constants";
 import Link from "next/link";
@@ -19,26 +19,16 @@ interface MobileMenuProps {
   user: User;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({
-  user,
-}) => {
-  const [openMobileMenu, setOpenMobileMenu] =
-    useState(false);
+const MobileMenu: React.FC<MobileMenuProps> = ({ user }) => {
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
   const mobileMenuHandler = () => {
     setOpenMobileMenu(!openMobileMenu);
   };
   return (
     <>
-      <div
-        className="md:hidden"
-        onClick={mobileMenuHandler}
-      >
-        {openMobileMenu ? (
-          <CgClose size={25} />
-        ) : (
-          <CgMenuGridO size={25} />
-        )}
+      <div className="md:hidden" onClick={mobileMenuHandler}>
+        {openMobileMenu ? <CgClose size={25} /> : <CgMenuGridO size={25} />}
       </div>
 
       {openMobileMenu ? (
@@ -52,10 +42,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           >
             <div className="border-b py-5 text-center">
               <Link href={"/"}>
-                <h1 className="text-3xl font-extrabold text-secondary">
-                  Explore
-                  <span className="text-primary">X</span>
-                </h1>
+                <Image src="/logo.svg" width={200} height={50} alt="logo" />
               </Link>
 
               <div className="flex gap-5 text-secondary flex-1 justify-center text-xl mt-5">
@@ -76,9 +63,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                       route={link.route}
                       label={link.label}
                       isActive={isActive}
-                      onClick={() =>
-                        setOpenMobileMenu(false)
-                      }
+                      onClick={() => setOpenMobileMenu(false)}
                     />
                   </li>
                 );
@@ -103,10 +88,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             {user && (
               <div>
                 <ul className="flex flex-col  gap-5 items-center">
-                  <Link
-                    href="/create"
-                    onClick={() => setOpenMobileMenu(false)}
-                  >
+                  <Link href="/create" onClick={() => setOpenMobileMenu(false)}>
                     <li>Create a Post</li>
                   </Link>
                   <Link
@@ -116,9 +98,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                     <li>My Post</li>
                   </Link>
 
-                  <li onClick={() => signOut()}>
-                    Sign Out
-                  </li>
+                  <li onClick={() => signOut()}>Sign Out</li>
                 </ul>
               </div>
             )}

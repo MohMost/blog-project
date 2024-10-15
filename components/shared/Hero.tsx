@@ -4,19 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { PostTypes } from "@/types/postTypes";
 import { formatDate } from "@/utils/formatDate";
+import Banner from "../Banner";
 
-const Hero: React.FC<{ posts: PostTypes[] }> = ({
-  posts,
-}) => {
-  const featuredPost = posts.filter(
-    (post) => post.featured === true
-  );
+const Hero: React.FC<{ posts: PostTypes[] }> = ({ posts }) => {
+  const featuredPost = posts.filter((post) => post.featured === true);
 
   const topFeatured = featuredPost.slice(0, 1);
   const bottomFeatured = featuredPost.slice(1, 4);
 
   return (
-    <section className="relative">
+    <section className="relative ">
+      <Banner />
       <div className="w-[95%] mx-auto max-w-[1450px] z-1">
         {topFeatured.map((post) => (
           <article
@@ -64,10 +62,7 @@ const Hero: React.FC<{ posts: PostTypes[] }> = ({
               key={post.id}
               className="flex flex-col gap-3 items-center text-center relative"
             >
-              <Link
-                className="w-full"
-                href={`/blog/${post.id}`}
-              >
+              <Link className="w-full" href={`/blog/${post.id}`}>
                 <div className="relative  overflow-hidden h-72 shadow-xl w-full">
                   {post.img && (
                     <img

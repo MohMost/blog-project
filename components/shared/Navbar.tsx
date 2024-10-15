@@ -40,25 +40,20 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <nav
       className={clsx(
-        "py-4 w-full",
-        isScrolling
-          ? "fixed top-0 bg-white shadow-lg z-10"
-          : "relative"
+        " w-full bg-light py-4 h-[10dvh]",
+        isScrolling ? "fixed top-0 bg-white shadow-lg z-20" : "relative  z-20"
       )}
     >
       <div
         className={clsx(
-          "w-[95%] mx-auto max-w-[1450px] flex  items-center justify-between  border-b border-gray-100",
+          "w-[95%] mx-auto max-w-[1450px] flex  items-center justify-between  ",
           isScrolling && "pb-0 border-none",
-          !isScrolling && "pb-5"
+          !isScrolling && ""
         )}
       >
         <div className="flex-1">
           <Link href={"/"}>
-            <h1 className="text-3xl font-extrabold text-secondary">
-              Explore
-              <span className="text-primary">X</span>
-            </h1>
+            <Image src={"/logo.svg"} width={150} height={50} alt="Logo" />
           </Link>
         </div>
 
@@ -109,23 +104,14 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
 
         {openUserMenu && (
           <ul className="z-10 absolute right-12 top-[70px] w-48 bg-white shadow-md rounded-md p-4">
-            <Link
-              href="/create"
-              onClick={() => setOpenUserMenu(false)}
-            >
+            <Link href="/create" onClick={() => setOpenUserMenu(false)}>
               <li>Create a post</li>
             </Link>
-            <Link
-              href="/userposts"
-              onClick={() => setOpenUserMenu(false)}
-            >
+            <Link href="/userposts" onClick={() => setOpenUserMenu(false)}>
               <li>My Post</li>
             </Link>
 
-            <li
-              className="cursor-pointer"
-              onClick={() => signOut()}
-            >
+            <li className="cursor-pointer" onClick={() => signOut()}>
               Sign out
             </li>
           </ul>
