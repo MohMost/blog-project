@@ -32,7 +32,7 @@ const BlogCard: React.FC<{ post: PostTypes }> = ({ post }) => {
 
       <Link
         href={`/blog/${post.id}`}
-        className="absolute bottom-0 right-0 bg-tertiary p-5 text-white rounded-tl-lg z-6 cursor-pointer"
+        className="absolute bottom-0 right-0 bg-secondary p-5 text-white rounded-tl-lg z-6 cursor-pointer"
       >
         <AiOutlineArrowRight size={30} />
       </Link>

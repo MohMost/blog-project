@@ -19,8 +19,8 @@ const page = () => {
         </h1>
       </div>
 
-      <div className="p-10 leading-8 text-lg mt-10 relative m-auto rouded-lg text-center">
-        <h1 className="text-4xl font-extrabold w-full text-center uppercase text-primary mb-10">
+      <div className="p-10 leading-8 text-lg mt-10 relative max-w-7xl m-auto rouded-lg text-center">
+        <h1 className="text-4xl font-extrabold w-full text-center uppercase text-secondary mb-10">
           Let's Discuss
         </h1>
 
@@ -29,37 +29,34 @@ const page = () => {
             <input
               type="text"
               placeholder="Name"
-              className="px-1 py-3 border-gray-300 w-full rounded-md text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-primary outline-none"
+              className="px-1 pt-3 border-b-2 border-secondary/50 w-full text-gray-900  placeholder:text-secondary/50 outline-none"
             />
             <input
               type="email"
               placeholder="Email"
-              className="px-1 py-3 border-gray-300 w-full rounded-md text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-primary outline-none"
+              className="px-1 pt-3 border-b-2 border-secondary/50 w-full text-gray-900  placeholder:text-secondary/50 outline-none"
             />
           </div>
           <div className="flex gap-5 max-sm:flex-col">
             <input
               type="text"
               placeholder="Subject"
-              className="px-1 py-3 border-gray-300 w-full rounded-md text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-primary outline-none"
+              className="px-1 pt-3 border-b-2 border-secondary/50 w-full text-gray-900  placeholder:text-secondary/50 outline-none"
             />
             <input
               type="tel"
               placeholder="Phone"
-              className="px-1 py-3 border-gray-300 w-full rounded-md text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-primary outline-none"
+              className="px-1 pt-3 border-b-2 border-secondary/50 w-full text-gray-900  placeholder:text-secondary/50 outline-none"
             />
           </div>
           <textarea
             name="message"
             placeholder="Message"
             rows={8}
-            className="px-1 py-3 border-gray-300 w-full rounded-md text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-primary outline-none"
+            className="px-1 pt-3 border-b-2 border-secondary/50 w-full text-gray-900  placeholder:text-secondary/50 outline-none"
           />
           <div className="flex justify-center">
-            <Button
-              aria="submit contact form"
-              text="Submit"
-            />
+            <Button aria="submit contact form" text="Submit" />
           </div>
         </form>
       </div>

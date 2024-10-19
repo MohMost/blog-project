@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
           </Link>
         </div>
 
-        <ul className="flex items-center justify-center gap-16 flex-2 max-md:hidden">
+        <ul className="flex items-center justify-center text-secondary/80 text-base font-semibold  gap-16 flex-2 max-md:hidden">
           {navLinks.map((link, index) => {
             const isActive = useMenuActive(link.route);
 
@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
         </ul>
 
         {!user && (
-          <div className="flex gap-5 flex-1 justify-end max-md:hidden">
+          <div className="flex gap-5 flex-1 text-base  justify-end max-md:hidden">
             <Button
               text="Log In"
               onClick={() => router.push("/access")}

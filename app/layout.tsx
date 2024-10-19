@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import AuthContext from "@/context/AuthContext";
 import getCurrentUser from "./actions/getCurrentUser";
 import { EdgeStoreProvider } from "@/lib/edgestore";
-import Head from "next/head";
-const roboto = Roboto({
+
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "400", "700", "900"],
 });
@@ -28,17 +28,9 @@ export default async function RootLayout({
   const user = await getCurrentUser();
   return (
     <html lang="en" className="h-full scroll-smooth">
-      <Head>
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          type="image/x-icon"
-          sizes="48x48"
-        />
-      </Head>
       <AuthContext>
         <EdgeStoreProvider>
-          <body className={`${roboto.className} overflow-x-hidden bg-light`}>
+          <body className={`${poppins.className} overflow-x-hidden bg-light`}>
             <Navbar user={user as any} />
             {children}
             <Footer />
