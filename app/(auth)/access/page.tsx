@@ -36,14 +36,14 @@ const page = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-10 sm:mx-auto sm:max-w-4xl px-5 h-[80dvh]">
-      <div className="bg-white shadow sm:rounded-lg flex gap-5 justify-between  overflow-hidden">
-        <div className="mt-6 flex gap-2 flex-col justify-center items-center mx-auto">
-          <h2 className="text-3xl m-2  font-extrabold text-[#42240C]">
+    <div className="flex justify-center items-center h-full w-full bg-primary h-[90dvh]">
+      <div className="bg-white shadow rounded-lg flex gap-5 justify-between  overflow-hidden my-10 sm:mx-auto sm:max-w-4xl  ">
+        <div className="m-6 md:my-6 flex gap-2 flex-col justify-center items-center mx-auto ">
+          <h2 className="text-2xl md:text-3xl m-2  font-extrabold text-[#42240C]">
             Login or signe up
           </h2>
 
-          <span className="text-sm">
+          <span className="text-sm mx-6">
             Log in or Sign up with the links below
           </span>
 
@@ -55,13 +55,13 @@ const page = () => {
             Login with google
           </button>
         </div>
-        <div className="w-1/3 flex justify-center items-center">
+        <div className="w-1/3 md:flex justify-center items-center sm:rounded-lg hidden">
           <Image
             src="/assets/access.jpg"
             height={500}
             width={500}
             alt="Sign up form image"
-            className="object-cover  lg:block hidden"
+            className="object-cover   lg:block hidden"
           />
         </div>
       </div>

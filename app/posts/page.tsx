@@ -9,8 +9,8 @@ const page = async () => {
     },
   });
   return (
-    <div className="mt-[40px]">
-      <div className="grid lg:grid-cols-3 lg:gap-10 grid-cols-1 w-[95%] max-w-[1450px] mx-auto overflow-y-hidden h-fit  max-lg:space-y-7">
+    <div className=" my-10  ">
+      <div className="grid lg:grid-cols-3 lg:gap-10 grid-cols-1 w-[95%] max-w-[1450px] mx-auto overflow-y-hidden h-fit max-lg:space-y-7">
         <Posts posts={posts} />
         <TopPost posts={posts} />
       </div>

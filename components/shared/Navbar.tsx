@@ -40,8 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <nav
       className={clsx(
-        " w-full bg-light py-4 h-[10dvh]",
-        isScrolling ? "fixed top-0 bg-white shadow-lg z-20" : "relative  z-20"
+        "flex  items-center w-full bg-light py-4 md:h-[10dvh]",
+        isScrolling
+          ? "fixed top-0 bg-white shadow-lg z-[100]"
+          : "relative  z-[100]"
       )}
     >
       <div

@@ -5,29 +5,26 @@ const Banner: React.FC = async () => {
   const user = await getCurrentUser(); // Récupère les informations utilisateur
 
   return (
-    <header
-      className="relative flex flex-col justify-between w-full h-[90vh] bg-cover"
-      style={{ backgroundColor: "#ea3f27" }}
-    >
+    <header className="relative flex flex-col justify-between w-full h-[90vh] bg-cover bg-[url('/images/banner2.png')] md:bg-none bg-primary bg-no-repeat">
       {/* Navbar Background Top */}
       <img className="w-full z-10" src="/svgs/waves.svg" alt="Waves" />
 
       {/* Banner Section */}
       <div className="relative flex flex-col justify-center items-start h-screen w-[95%] mx-auto max-w-[1450px]">
-        <div className="absolute top-1/2 transform -translate-y-1/2 w-1/2">
-          <h1 className="text-3xl font-semibold text-[#fff8f8] mb-3 md:text-2.5xl lg:text-6xl">
+        <div className="flex flex-col justify-center items-center md:items-start md:absolute md:top-1/2 md:transform md:-translate-y-1/2 w-full md:w-1/2">
+          <h1 className="text-xl  font-semibold text-light mb-3 md:text-2.5xl lg:text-6xl text-center md:text-left">
             Dash into insightful perspectives on today's topics
           </h1>
           <a
             href={user ? "/create" : "/access"} // Définition de l'URL en fonction de l'utilisateur
-            className="relative inline-block mt-2 border-2 text-center text-[#fff8f8] bg-transparent border border-[#fff8f8] rounded-lg p-2.5 text-lg font-semibold transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-[''] hover:text-[#42240C] before:hover:scale-x-100 cursor-pointer overflow-hidden"
+            className="relative inline-block mt-2 border-2 text-center text-[#fff8f8] bg-transparent border border-[#fff8f8] rounded-lg p-2.5 text-lg font-semibold transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-x-0 before:bg-white before:transition-transform before:duration-300 before:content-[''] hover:text-[#42240C] before:hover:scale-x-100 cursor-pointer overflow-hidden "
           >
             {user ? "Write a blog" : "Write your first blog"}
             <span className="absolute inset-0 z-[-1] bg-[#fff8f8] border-2 border-[#fff8f8] rounded-md transition-transform duration-200 ease-in-out transform scale-x-0 hover:scale-x-100"></span>
           </a>
         </div>
         <img
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 w-[45rem] h-auto z-0"
+          className="absolute right-5 top-1/2 transform -translate-y-1/2 2xl:w-[40rem] 2xl:h-auto h-[80dvh] z-0 hidden md:block"
           src="/images/banner.png"
           alt="Artwork"
         />
@@ -51,9 +48,9 @@ const Banner: React.FC = async () => {
       </a>
 
       {/* Navbar Background Bottom */}
-      <div className="relative z-10 w-full border-[0] h-1/2 bg-contain no-repeat bg-[url('/assets/backgroundsplit.png')]">
+      <div className="flex flex-col justify-end items-center relative z-10 w-full border-[0] h-[20vh]  bg-contain no-repeat bg-[url('/assets/backgroundsplit.png')] ">
         <img className="w-full" src="/svgs/wave_bottom.svg" alt="Wave Bottom" />
-        <div className="w-full h-16 bg-white"></div>
+        <div className="w-full h-10 bg-white"></div>
       </div>
     </header>
   );

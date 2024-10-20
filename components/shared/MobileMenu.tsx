@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { CgMenuGridO, CgClose } from "react-icons/cg";
 import {
@@ -14,6 +15,7 @@ import Route from "../ui/Route";
 import useMenuActive from "@/hooks/useMenuActive";
 import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface MobileMenuProps {
   user: User;
@@ -21,7 +23,7 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ user }) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
-
+  const router = useRouter();
   const mobileMenuHandler = () => {
     setOpenMobileMenu(!openMobileMenu);
   };
@@ -38,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ user }) => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="absolute h-screen left-0 top-0 w-60 bg-white z-[999] px-5 border-r overflow-y-hidden flex flex-col gap-10"
+            className="absolute h-screen left-0 top-0 w-60 bg-white z-[999] px-5 border-r overflow-y-hidden flex flex-col gap-2"
           >
             <div className="border-b py-5 text-center">
               <Link href={"/"}>
@@ -74,12 +76,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ user }) => {
               <div className="flex gap-5 flex-1 flex-col py-5">
                 <Button
                   text="Log In"
-                  onClick={() => null}
+                  onClick={() => router.push("/access")}
                   aria="Log in button"
                 />
                 <Button
                   text="Sign Up"
-                  onClick={() => null}
+                  onClick={() => router.push("/access")}
                   aria="Sign up button"
                 />
               </div>
