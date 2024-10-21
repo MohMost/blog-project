@@ -61,7 +61,7 @@ const page = () => {
             height={500}
             width={500}
             alt="Sign up form image"
-            className="object-cover   lg:block hidden"
+            className="object-cover lg:block hidden"
           />
         </div>
       </div>

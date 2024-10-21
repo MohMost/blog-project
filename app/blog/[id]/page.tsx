@@ -9,7 +9,7 @@ import { PostTypes } from "@/types/postTypes";
 import { formatDate } from "@/utils/formatDate";
 
 const getData = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/post/${id}`, {
+  const res = await fetch(`https://rubydash.vercel.app//api/post/${id}`, {
     cache: "no-store",
   });
 
